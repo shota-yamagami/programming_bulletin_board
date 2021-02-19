@@ -23,7 +23,7 @@ public class ParticipantValidator {
 		}
 
 		String password_error = validatePassword(p.getPassword(), passwordCheckFlag);
-		if(password_error.equals("")) {
+		if(!password_error.equals("")) {
 			errors.add(password_error);
 		}
 
@@ -33,7 +33,7 @@ public class ParticipantValidator {
 	// ユーザーネーム
 	private static String validateName(String name, Boolean nameDuplicateCheckFlag) {
 		if(name == null || name.equals("")) {
-			return "名前を入力してください。";
+			return "ニックネームを入力してください。";
 		}
 
 		// すでに登録されている名前との重複チェック

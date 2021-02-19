@@ -12,6 +12,7 @@
 		<div id="wrapper">
 			<div id="header">
 				<h1>PGハウス</h1>
+				${param.header}
 			</div>
 			<div id="content">
 				${param.content}

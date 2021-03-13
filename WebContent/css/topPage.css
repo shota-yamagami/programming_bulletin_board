@@ -1,0 +1,137 @@
+@CHARSET "UTF-8"
+
+body {
+    color: #333333;
+    margin: 0; width: 100%; height: 100%;
+    font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+}
+
+.wrapper {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.header {
+	width: 100%;
+	height: 70px;
+	background: linear-gradient(100deg, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%);
+	display: flex;
+  	justify-content: space-between;
+  	align-items: center;
+  	position: fixed;
+  	z-index:1;
+}
+
+.header h1 {
+    font-size: 40px;
+    font-family: 'Sacramento', cursive;
+    color: ＃204969;
+    margin-left: 20px;
+}
+
+.header_menu {
+	width: 50%;
+	margin-right: 20px;
+    text-align: right;
+}
+
+.content {
+	background-image: url(../jpg/img05.jpg);
+    background-size: contain;
+    position: relative;/*←相対位置*/
+    height: 600px;
+	padding-bottom: 200px;
+}
+
+.animation {
+    background: linear-gradient(100deg, #D3CCE3 0%, #E9E4F0 100%);
+    opacity : 0.9;
+    width:100%;
+    height: 100px;
+    line-height:100px;
+    overflow: hidden;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+}
+
+h2 {
+    font-size:60px;
+    color: #1a2a6c;
+    background: linear-gradient(100deg, #40E0D0, #FF8C00, #FF0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flowing 10s linear infinite;
+    transform: translateX(100%);/*初期位置*/
+}
+
+.main {
+	background: linear-gradient(100deg, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%);
+	padding-top: 100px;
+	padding-bottom: 180px;
+}
+
+p {
+	text-align: center;
+	font-size: 40px;
+	color: #204969;
+}
+
+span {
+	font-size: 55px;
+	color: #DA8E00;
+	background: -webkit-linear-gradient(45deg, #ca3e47, #ea7070, #b9006e);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+a {
+	color: #414141;
+    text-decoration: none;
+}
+
+.footer {
+	width: 100%;
+	height:70px;
+    line-height:70px;
+    background: #ceefe4;
+    text-align: center;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+}
+
+@keyframes flowing {
+  100% {
+    transform: translateX(-100%);
+  }
+}

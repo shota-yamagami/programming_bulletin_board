@@ -2,7 +2,6 @@ package controllers.participants;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ParticipantsSignUpServlet
+ * Servlet implementation class ParticipantsLogoutServlet
  */
-@WebServlet("/participants/signUp")
-public class ParticipantsSignUpServlet extends HttpServlet {
+@WebServlet("/participants/logout")
+public class ParticipantsLogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ParticipantsSignUpServlet() {
+    public ParticipantsLogoutServlet() {
         super();
     }
 
@@ -27,11 +26,10 @@ public class ParticipantsSignUpServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// CSRF対策(次にトークンを渡す準備)
-		request.setAttribute("_token", request.getSession().getId());
-		// 新規投稿ページへアクセス
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/participants/signUp.jsp");
-		rd.forward(request, response);
+		request.getSession().removeAttribute("login_participant");
+
+        request.getSession().setAttribute("flush", "ログアウトしました。");
+        response.sendRedirect(request.getContextPath() + "/participants/login");
 	}
 
 }

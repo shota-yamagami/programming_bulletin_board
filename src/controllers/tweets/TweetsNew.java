@@ -1,4 +1,4 @@
-package controllers.participants;
+package controllers.tweets;
 
 import java.io.IOException;
 
@@ -9,17 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Tweet;
+
 /**
- * Servlet implementation class ParticipantsSignUpServlet
+ * Servlet implementation class TweetsNew
  */
-@WebServlet("/participants/signUp")
-public class ParticipantsSignUpServlet extends HttpServlet {
+@WebServlet("/tweets/new")
+public class TweetsNew extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ParticipantsSignUpServlet() {
+    public TweetsNew() {
         super();
     }
 
@@ -27,10 +29,12 @@ public class ParticipantsSignUpServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// CSRF対策(次にトークンを渡す準備)
 		request.setAttribute("_token", request.getSession().getId());
-		// 新規投稿ページへアクセス
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/participants/signUp.jsp");
+
+		Tweet t = new Tweet();
+		request.setAttribute("tweet", t);
+
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tweets/new.jsp");
 		rd.forward(request, response);
 	}
 

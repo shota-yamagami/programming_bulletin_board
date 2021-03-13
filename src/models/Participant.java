@@ -13,20 +13,20 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(
 		name = "getAllParticipants",
-		query = "SELECT e FROM Participant AS e ORDER BY e.participant_id DESC"
+		query = "SELECT p FROM Participant AS p ORDER BY p.participant_id DESC"
 	),
 	@NamedQuery(
 			name = "getParticipantsCount",
-			query = "SELECT COUNT(e) FROM Participant AS e"
-			),
+			query = "SELECT COUNT(p) FROM Participant AS p"
+	),
 	@NamedQuery(
 			name = "checkRegisteredName",
-			query = "SELECT COUNT(e) FROM Participant AS e WHERE e.name = :name"
-			),
+			query = "SELECT COUNT(p) FROM Participant AS p WHERE p.name = :name"
+	),
 	@NamedQuery(
 		name = "checkLoginNameAndPassword",
-		query = "SELECT e FROM Participant AS e WHERE e.name = :name AND e.password = :pass"
-	)
+		query = "SELECT p FROM Participant AS p WHERE p.name = :name AND p.password = :pass"
+	),
 })
 @Entity
 public class Participant {

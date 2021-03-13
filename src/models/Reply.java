@@ -24,6 +24,14 @@ import javax.persistence.Table;
         name = "getReplysCount",
         query = "SELECT COUNT(r) FROM Reply AS r"
     ),
+    @NamedQuery(
+        name = "getReplysForTweet",
+        query = "SELECT r FROM Reply AS r WHERE r.tweet_id = :tweet_id ORDER BY r.reply_id DESC"
+    ),
+    @NamedQuery(
+        name = "getReplysForTweetCount",
+        query = "SELECT COUNT(r) FROM Reply AS r WHERE r.tweet_id = :tweet_id"
+    )
 })
 @Entity
 public class Reply {

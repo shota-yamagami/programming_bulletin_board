@@ -17,13 +17,25 @@ import javax.persistence.Table;
 @Table(name = "tweets")
 @NamedQueries({
 	@NamedQuery(
-		name = "getAllTweets",
-		query = "SELECT t FROM Tweet AS t ORDER BY t.tweet_id DESC"
+		name = "getAllMyTweets",
+		query = "SELECT t FROM Tweet AS t WHERE t.participant_id = :participant_id ORDER BY t.tweet_id DESC"
 	),
 	@NamedQuery(
-		name = "getTweetsCount",
-		query = "SELECT COUNT(t) FROM Tweet AS t"
+		name = "getMyTweetsCount",
+		query = "SELECT COUNT(t) FROM Tweet AS t WHERE t.participant_id = :participant_id"
 	),
+	@NamedQuery(
+		name = "getTweetsEachLanguage_flag",
+		query = "SELECT t FROM Tweet AS t WHERE t.language_flag = :language_flag ORDER BY t.tweet_id DESC"
+	),
+	@NamedQuery(
+		name = "getTweetsEachLanguage_flagCount",
+		query = "SELECT COUNT(t) FROM Tweet AS t WHERE t.language_flag = :language_flag"
+	),
+	@NamedQuery(
+			name = "getTweetsSearch",
+			query = "SELECT t FROM Tweet AS t WHERE t.participant_id.name LIKE :i OR t.title LIKE :i OR t.content LIKE :i"
+	)
 })
 @Entity
 public class Tweet {
@@ -34,7 +46,7 @@ public class Tweet {
 
 	@ManyToOne
     @JoinColumn(name = "participant_id", nullable = false)
-    private Participant participant;
+    private Participant participant_id;
 
 	@Column(name = "title", length = 255, nullable = false)
     private String title;
@@ -49,7 +61,7 @@ public class Tweet {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
-    @Column(name = "language_flag", nullable = false)
+    @Column(name = "language_flag")
     private Integer language_flag;
 
 	public Integer getTweet_id() {
@@ -60,12 +72,12 @@ public class Tweet {
 		this.tweet_id = tweet_id;
 	}
 
-	public Participant getParticipant() {
-		return participant;
+	public Participant getParticipant_id() {
+		return participant_id;
 	}
 
-	public void setParticipant(Participant participant) {
-		this.participant = participant;
+	public void setParticipant_id(Participant participant_id) {
+		this.participant_id = participant_id;
 	}
 
 	public String getTitle() {
@@ -107,6 +119,5 @@ public class Tweet {
 	public void setLanguage_flag(Integer language_flag) {
 		this.language_flag = language_flag;
 	}
-
 
 }

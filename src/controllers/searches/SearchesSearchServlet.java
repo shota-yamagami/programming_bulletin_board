@@ -28,6 +28,18 @@ public class SearchesSearchServlet extends HttpServlet {
         super();
     }
 
+    /**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getSession().getAttribute("search_flush") != null) {
+			request.setAttribute("search_flush", request.getSession().getAttribute("search_flush"));
+			request.getSession().removeAttribute("search_flush");
+		}
+
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tweets/search.jsp");
+        rd.forward(request, response);
+	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -45,7 +57,7 @@ public class SearchesSearchServlet extends HttpServlet {
 
 			if(searches.size() == 0) {
 				request.getSession().setAttribute("search_flush", "お探しのデータはありませんでした");
-				response.sendRedirect(request.getContextPath() + "/tweets/myPage");
+				response.sendRedirect(request.getContextPath() + "/searches/search");
 			} else {
 				request.setAttribute("searches", searches);
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tweets/search.jsp");
@@ -53,7 +65,7 @@ public class SearchesSearchServlet extends HttpServlet {
 			}
 		} else {
 			request.getSession().setAttribute("search_flush", "検索内容を入力してください。");
-			response.sendRedirect(request.getContextPath() + "/tweets/myPage");
+			response.sendRedirect(request.getContextPath() + "/searches/search");
 		}
 	}
 }

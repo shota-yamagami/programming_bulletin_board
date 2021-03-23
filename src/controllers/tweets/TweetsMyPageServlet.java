@@ -76,7 +76,6 @@ public class TweetsMyPageServlet extends HttpServlet {
 
 		em.close();
 
-
 		// jspへ渡すデータの準備
 		request.setAttribute("tweets", tweets);
 		request.setAttribute("tweets_count", tweets_count);
@@ -86,10 +85,6 @@ public class TweetsMyPageServlet extends HttpServlet {
 		if(request.getSession().getAttribute("flush") != null) {
 			request.setAttribute("flush", request.getSession().getAttribute("flush"));
 			request.getSession().removeAttribute("flush");
-		}
-		if(request.getSession().getAttribute("search_flush") != null) {
-			request.setAttribute("search_flush", request.getSession().getAttribute("search_flush"));
-			request.getSession().removeAttribute("search_flush");
 		}
 		// 遷移先の指定
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tweets/myPage.jsp");

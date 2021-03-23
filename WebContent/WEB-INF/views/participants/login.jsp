@@ -7,7 +7,7 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/login.css' />">
-        <title>Insert title here</title>
+        <title>PG掲示板</title>
     </head>
 	<body>
 	     <div id="header">
@@ -37,11 +37,10 @@
 			    <span>username</span>
 			    <br>
 			    <br>
+			    <br>
 			    <input type="password" class="text" name="password">
 			    <span>password</span>
 			    <br>
-			    <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
-			    <label for="checkbox-1-1">Keep me Signed in</label>
 				<input type="hidden" name="_token" value="${_token}" />
 			    <button class="signin">Sign In</button>
 			    <hr>
@@ -50,7 +49,7 @@
 		</div>
 
 		<div id="footer">
-			by gami.
+			PG HOUSE.
 		</div>
     </body>
 </html>

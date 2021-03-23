@@ -73,17 +73,21 @@ public class LanguagesServlet extends HttpServlet {
         String forwardPath = null;
     	for(int i = 0; i < 6; i++ ) {
     		if(language_flag == 0) {
-    			forwardPath = "/WEB-INF/views//languages/javaScript.jsp";
+    			forwardPath = "/WEB-INF/views//languages/html,css.jsp";
     		}else if(language_flag == 1) {
-    			forwardPath = "/WEB-INF/views//languages/java.jsp";
+    			forwardPath = "/WEB-INF/views//languages/javaScript.jsp";
     		}else if(language_flag == 2) {
-    			forwardPath = "/WEB-INF/views//languages/PHP.jsp";
+    			forwardPath = "/WEB-INF/views//languages/java.jsp";
     		}else if(language_flag == 3) {
-    			forwardPath = "/WEB-INF/views//languages/ruby.jsp";
+    			forwardPath = "/WEB-INF/views//languages/PHP.jsp";
     		}else if(language_flag == 4) {
-    			forwardPath = "/WEB-INF/views//languages/python.jsp";
+    			forwardPath = "/WEB-INF/views//languages/ruby.jsp";
     		}else if(language_flag == 5) {
+    			forwardPath = "/WEB-INF/views//languages/python.jsp";
+    		}else if(language_flag == 6) {
     			forwardPath = "/WEB-INF/views//languages/c.jsp";
+    		}else if(language_flag == 7) {
+    			forwardPath = "/WEB-INF/views//languages/other.jsp";
     		}
     		request.setAttribute("reply_counts", reply_counts);
     		request.setAttribute("like_counts", like_counts);

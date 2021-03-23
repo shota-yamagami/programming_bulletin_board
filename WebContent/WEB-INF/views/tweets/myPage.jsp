@@ -9,11 +9,6 @@
 		                <c:out value="${flush}"></c:out>
 		            </div>
 		        </c:if>
-		        <c:if test="${search_flush != null}">
-		            <div id="flush_error">
-		                <c:out value="${search_flush}"></c:out>
-		            </div>
-		        </c:if>
 		        <h2>自分の投稿 一覧</h2>
 				<table>
 					<tr>
@@ -27,12 +22,14 @@
 						<tr class="row${status.count % 2}">
 							<td class="language_flag">
 								<c:choose>
-									<c:when test="${tweet.language_flag == 1}">Java</c:when>
-									<c:when test="${tweet.language_flag == 2}">PHP</c:when>
-									<c:when test="${tweet.language_flag == 3}">Ruby</c:when>
-									<c:when test="${tweet.language_flag == 4}">Python</c:when>
-									<c:when test="${tweet.language_flag == 5}">C言語</c:when>
-									<c:otherwise>JavaScript</c:otherwise>
+									<c:when test="${tweet.language_flag == 0}">HTML、CSS</c:when>
+									<c:when test="${tweet.language_flag == 1}">JavaScript</c:when>
+									<c:when test="${tweet.language_flag == 2}">Java</c:when>
+									<c:when test="${tweet.language_flag == 3}">PHP</c:when>
+									<c:when test="${tweet.language_flag == 4}">Ruby</c:when>
+									<c:when test="${tweet.language_flag == 5}">Python</c:when>
+									<c:when test="${tweet.language_flag == 6}">C言語</c:when>
+									<c:otherwise>その他言語</c:otherwise>
 								</c:choose>
 							</td>
 							<td class="title"><a href="<c:url value='/tweets/show?tweet_id=${tweet.tweet_id}' />">${tweet.title}</a></td>

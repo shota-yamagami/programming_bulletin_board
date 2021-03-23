@@ -12,7 +12,7 @@
 		<div class="wrapper">
 			<div class="content">
 				<div class="header">
-					<h1> WELLCOME PG HOUSE</h1>
+					<h1>PG HOUSE</h1>
 					<div class="header_menu">
 						<a href="<c:url value='/pdf/precautions.pdf' />">注意事項</a>&emsp;&emsp;&emsp;&emsp;
 						<a href="<c:url value='/participants/signUp' />">新規登録</a>&emsp;&emsp;&emsp;&emsp;
@@ -20,19 +20,19 @@
 					</div>
 				</div>
 				<div class="animation">
-					<h2>プログラミング専用掲示板サイトへようこそ！</h2>
+					<h2>WELLCOME PG HOUSE</h2>
 				</div>
 			</div>
 			<div class="main">
 				<P>ここではプログラミングの経験が豊富な方から未経験者まで、経歴を問わず<br />
 				自分の興味のあるプログラミング言語のページへ入り知識、学習したこと、<br />経験したこと、質問や疑問に思ったことなどつぶやいて<br />
 				コミュニケーションをとり気軽にご利用いただける<br /><span>プログラミング専用掲示板サイト</span>です。</P>
+				<div class="bg"></div>
+				<div class="bg bg2"></div>
+				<div class="bg bg3"></div>
 			</div>
-			<div class="bg"></div>
-			<div class="bg bg2"></div>
-			<div class="bg bg3"></div>
 			<div class="footer">
-				by gami.
+				PG HOUSE.
 			</div>
 		</div>
     </body>

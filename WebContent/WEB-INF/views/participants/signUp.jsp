@@ -7,7 +7,7 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/signUp.css' />">
-        <title>Insert title here</title>
+        <title>PG掲示板</title>
     </head>
 <body>
 	<div id="header">
@@ -26,28 +26,28 @@
 				</div>
 		</c:if>
 	     <div class="content">
-		 <div class="signUp">
-		 <form method="POST" action="<c:url value='/participants/create' />">
-		 <h2> sign up </h2>
-		    <input type="text" class="text" name="name" value="${participant.name}" />
-		    <span>username</span>
-		    <br>
-		    <br>
-		    <input type="text" class="text" name="mail" value="${participant.mail}" />
-		    <span>mail</span>
-		    <br>
-		    <br>
-		    <input type="password" class="text" name="password">
-		    <span>password</span>
-		    <br>
-			<input type="hidden" name="_token" value="${_token}" />
-		    <button class="signin">Sign Up</button>
-		    <hr>
-		</form>
-		</div>
+			 <div class="signUp">
+				 <form method="POST" action="<c:url value='/participants/create' />">
+				 <h2> sign up </h2>
+				    <input type="text" class="text" name="name" value="${participant.name}" />
+				    <span>username</span>
+				    <br>
+				    <br>
+				    <input type="text" class="text" name="mail" value="${participant.mail}" />
+				    <span>mail</span>
+				    <br>
+				    <br>
+				    <input type="password" class="text" name="password">
+				    <span>password</span>
+				    <br>
+					<input type="hidden" name="_token" value="${_token}" />
+				    <button class="signin">Sign Up</button>
+				    <hr>
+				</form>
+			</div>
 		</div>
 		<div id="footer">
-			by gami.
+			PG HOUSE.
 		</div>
     </body>
 </html>

@@ -7,12 +7,14 @@
 
 <label for="language_flag">言語</label><br />
 <select name="language_flag">
-    <option value="0"<c:if test="${tweet.language_flag == 0}"> selected</c:if>>JavaScript</option>
-    <option value="1"<c:if test="${tweet.language_flag == 1}"> selected</c:if>>Java</option>
-    <option value="2"<c:if test="${tweet.language_flag == 2}"> selected</c:if>>PHP</option>
-    <option value="3"<c:if test="${tweet.language_flag == 3}"> selected</c:if>>Ruby</option>
-    <option value="4"<c:if test="${tweet.language_flag == 4}"> selected</c:if>>Python</option>
-    <option value="5"<c:if test="${tweet.language_flag == 5}"> selected</c:if>>C言語</option>
+    <option value="0"<c:if test="${tweet.language_flag == 0}"> selected</c:if>>HTML、CSS</option>
+    <option value="1"<c:if test="${tweet.language_flag == 1}"> selected</c:if>>JavaScript</option>
+    <option value="2"<c:if test="${tweet.language_flag == 2}"> selected</c:if>>Java</option>
+    <option value="3"<c:if test="${tweet.language_flag == 3}"> selected</c:if>>PHP</option>
+    <option value="4"<c:if test="${tweet.language_flag == 4}"> selected</c:if>>Ruby</option>
+    <option value="5"<c:if test="${tweet.language_flag == 5}"> selected</c:if>>Python</option>
+    <option value="6"<c:if test="${tweet.language_flag == 6}"> selected</c:if>>C言語</option>
+    <option value="7"<c:if test="${tweet.language_flag == 7}"> selected</c:if>>その他言語</option>
 </select>
 <br /><br />
 
